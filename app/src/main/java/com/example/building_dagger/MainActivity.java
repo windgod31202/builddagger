@@ -14,10 +14,7 @@ public class MainActivity extends AppCompatActivity {
     // TODO: 2022-12-07 Component建構OK
 
     @Inject
-    House house;
-
-    @Inject
-    Outfit outfit;
+    House house1,house2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
         houseComponent.inject(this);
 
-        house.completed();
+        house1.completed();
+        house2.completed();
 
         // TODO: 2022-12-12 HackMD筆記
     }

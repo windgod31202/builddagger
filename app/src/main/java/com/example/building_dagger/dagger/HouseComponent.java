@@ -4,8 +4,11 @@ package com.example.building_dagger.dagger;
 import com.example.building_dagger.House;
 import com.example.building_dagger.MainActivity;
 
+import javax.inject.Singleton;
+
 import dagger.Component;
 
+@Singleton
 @Component (modules = { OutfitModule.class,
                         PowerSystemModule.class,
                         PerformanceModule.class })
