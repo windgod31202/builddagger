@@ -11,7 +11,8 @@ import dagger.Component;
 @Singleton
 @Component (modules = { OutfitModule.class,
                         PowerSystemModule.class,
-                        PerformanceModule.class })
+                        PerformanceModule.class,
+                        RebarMaterialsModule.class})
 public interface HouseComponent {
     // 組成House的Component(構成要素)有哪些：
     // TODO: 2022-12-07 建立dagger

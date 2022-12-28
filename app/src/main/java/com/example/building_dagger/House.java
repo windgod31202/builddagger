@@ -2,6 +2,7 @@ package com.example.building_dagger;
 
 import android.util.Log;
 
+import com.example.building_dagger.Materials.Materials;
 import com.example.building_dagger.outfit.Outfit;
 import com.example.building_dagger.performace.Performance;
 import com.example.building_dagger.powersystem.PowerSystem;
@@ -19,14 +20,16 @@ public class House {
     private PowerSystem powerSystem;
     private Performance performance;
     private Worker worker;
+    private Materials materials;
 
     //在Constructor上方建立@Inject註解，可以讓Dagger建立時知道該建構元是實例化House的方法。
     @Inject
-    public House(Worker worker, Outfit outfit, PowerSystem powerSystem, Performance performance) {
+    public House(Worker worker, Outfit outfit, PowerSystem powerSystem, Performance performance, Materials materials) {
         this.worker = worker;
         this.outfit = outfit;
         this.powerSystem = powerSystem;
         this.performance = performance;
+        this.materials = materials;
         Log.e(TAG, "House OK");
     }
 
@@ -34,6 +37,7 @@ public class House {
      *  所有物件準備完成，開始啟動。
      */
     public void completed(){
-        Log.e(TAG, worker+" builded "+this);
+        materials.Building();
+        Log.e(TAG, worker+" built "+this);
     }
 }
