@@ -3,6 +3,7 @@
     package="com.example.building_dagger">
 
     <application
+        android:name=".ExampleAPP"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"

@@ -37,7 +37,7 @@ public class House {
      *  所有物件準備完成，開始啟動。
      */
     public void completed(){
-        materials.Building();
+        materials.BuildingMaterials();
         Log.e(TAG, worker+" built "+this);
     }
 }

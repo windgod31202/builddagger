@@ -12,7 +12,7 @@ public class RebarMaterials implements Materials{
     }
 
     @Override
-    public void Building() {
+    public void BuildingMaterials() {
         Log.e(TAG, "Building Materials is Rebar!");
     }
 }

@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.example.building_dagger.dagger.DaggerHouseComponent;
 import com.example.building_dagger.dagger.HouseComponent;
-import com.example.building_dagger.outfit.Outfit;
+import com.example.building_dagger.dagger.RedBrickMaterialsModule;
 
 import javax.inject.Inject;
 
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        HouseComponent houseComponent = DaggerHouseComponent.create();
+        HouseComponent houseComponent = ((ExampleAPP) getApplication()).getComponent();
 
         houseComponent.inject(this);
 

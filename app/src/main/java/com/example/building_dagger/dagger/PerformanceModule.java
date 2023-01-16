@@ -4,6 +4,8 @@ package com.example.building_dagger.dagger;
 import com.example.building_dagger.performace.Performance;
 import com.example.building_dagger.performace.WaterProof;
 
+import javax.inject.Named;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -21,4 +23,18 @@ public abstract class PerformanceModule {
     static Performance providePerformance(WaterProof waterProof){
         return new Performance(waterProof);
     }
+
+    @Named("one")
+    @Provides
+    static int provideOne(){
+        return 1;
+    }
+
+    @Named("two")
+    @Provides
+    static int provideTwo(){
+        return 2;
+    }
+
+
 }
