@@ -3,6 +3,7 @@ package com.example.building_dagger;
 import android.util.Log;
 
 import com.example.building_dagger.Materials.Materials;
+import com.example.building_dagger.dagger.PerActivity;
 import com.example.building_dagger.outfit.Outfit;
 import com.example.building_dagger.performace.Performance;
 import com.example.building_dagger.powersystem.PowerSystem;
@@ -10,7 +11,7 @@ import com.example.building_dagger.worker.Worker;
 
 import javax.inject.Inject;
 
-
+@PerActivity
 public class House {
     // TODO: 2022-12-07 建立class其是House必備的Module，outfit_Module。
     private static final String TAG = "House";

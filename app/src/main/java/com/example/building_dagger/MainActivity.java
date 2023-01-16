@@ -4,9 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.example.building_dagger.dagger.DaggerHouseComponent;
-import com.example.building_dagger.dagger.HouseComponent;
-import com.example.building_dagger.dagger.RedBrickMaterialsModule;
+import com.example.building_dagger.dagger.ActivityComponent;
+import com.example.building_dagger.dagger.DaggerActivityComponent;
 
 import javax.inject.Inject;
 
@@ -21,9 +20,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        HouseComponent houseComponent = ((ExampleAPP) getApplication()).getComponent();
+        ActivityComponent activityComponent = DaggerActivityComponent.builder()
+                                                .height(200)
+                                                .quantity(100)
+                                                .appComponent(((ExampleAPP) getApplication()).getComponent())
+                                                .build();
 
-        houseComponent.inject(this);
+        activityComponent.inject(this);
 
         house1.completed();
         house2.completed();

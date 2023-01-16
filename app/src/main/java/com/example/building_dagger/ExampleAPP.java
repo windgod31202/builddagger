@@ -2,23 +2,20 @@ package com.example.building_dagger;
 
 import android.app.Application;
 
-import com.example.building_dagger.dagger.DaggerHouseComponent;
-import com.example.building_dagger.dagger.HouseComponent;
+import com.example.building_dagger.dagger.AppComponent;
+import com.example.building_dagger.dagger.DaggerAppComponent;
 
 public class ExampleAPP extends Application {
 
-    private HouseComponent component;
+    private AppComponent component;
 
     @Override
     public void onCreate() {
         super.onCreate();
 
-        component = DaggerHouseComponent.builder()
-                .height(220)
-                .quantity(50)
-                .build();
+        component = DaggerAppComponent.create();
     }
-    public HouseComponent getComponent(){
+    public AppComponent getComponent(){
         return component;
     }
 }
